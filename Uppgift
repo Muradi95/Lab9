@@ -1,0 +1,59 @@
+*** Avslutande laboration för Z ***
+
+Sista uppgiften på kursen går ut på
+att göra ett Tower Defence spel (väldig förenklat).
+Finns massor med exempel på nätet t.ex.
+http://www.flasharcade.com/tower-defence-games/play/azgard-tower-defense.html
+
+Vår spel blir inte lika snyggt grafiskt (inderstatement), en
+skärmdump finns i filen screenshop.png (frivilligt är att snygga
+till grafiken så mycket det går).
+
+
+Beskrivning av spelet
+--------------------
+(det är väldigt svårt att få med alla detaljer, om något är
+oklart får ni fråga)
+Programmet skall låta ett "monster" följa en viss väg från ena
+sidan av fönstret till andra.
+Längs vägen kan man placera ett valfritt antal torn. Tornen
+har viss räckvid och viss "eldkraft". När monstret på
+sin vandring kommer inom räckhåll för något torn börjar tornet
+skjuta på monstret. Tornens sannolikhet för träff är 50%.
+Monstret startar med en viss positiv "hälsa". Vartefter det träffas
+av tornen minskar hälsan (beroende på eldkraft). När monstrets hälsa
+är 0 dör det.
+- Om monstret lyckas ta sig hela vägen (förbi alla torn) utan
+att dö så förlorar spelaren (d.v.s. tornen var på fel plats).
+- Om monstret dör innan det kommer fram har spelaren vunnit.
+
+
+Tekniska krav
+- Programmet skall ha samma struktur som GUIPig och LCR med GUI (modell för sig,
+   GUI som anropar top-level).
+- Ingen in- eller utmatning, vi hårdkodar in allt (väg, torn, ...).
+- Det skall finnas möjlighet till minst två olika väger, minst två torn och ett monster
+  (man får alltså ändra i koden och köra på nytt).
+- Monstret påbörjar sin vandring direkt då spelet börjar.
+- Det finns *inga* krav på att projektiler skall visas.
+- Speletplanen är uppbygd utifrån positioner. En position anger rad och kolumn. Alla
+  objekt i spelet har en viss position (vid given tidpunkt).
+- Man skall kunna avläsa monstrets hälsa
+- För samtliga modellklasser skall invarianter anges. Klasser skall se
+till att invarianter upprätthålls.
+- Alla tester skall finnas i filen Test.java se vidare nedan.
+- För metoder (i modellen) som har förvillkor skall dessa anges. Metoderna skall hantera
+  indata som bryter mot förvillkoren.
+- Då monstret dör avbryts spelet direkt.
+- Skapa ett interface till top-level-klassen. Låt alla variabler i GUI:et
+ vara av interface-typen (gör detta sist).
+
+
+Tips:
+- Utveckla på samma sätt som LCR spelet, först bottom-up, hitta alla klasser
+  koda dessa, testa (i klassen Test)
+- Därefter, top-down, utgå från GUI. Vilka metoder behövs i top-level klassen, o.s.v.
+- Använd Manhattan distance för avstånd, se http://en.wikipedia.org/wiki/Taxicab_geometry
+- Tid simuleras m.h.a. diskreta tidssteg "tick":s. Vid varje tick uppdateras modellen.
+- Använd en java.swing.Timer() för att driva "tick":sen.
+- Det bör räcka med ca 4 klasser i modellen.
