@@ -12,14 +12,15 @@ public class Position {
     public void moveForward(){
         this.x = x + 1;
     }
-
-    public  void moveDown(){
+   
+    public void moveUp(){
+    	this.y = y + 1;
+    }
+    
+    public void moveDown(){
         this.y = y - 1;
     }
-    public void moveUp(){
-        this.y = y + 1 ;
-    }
-
+    
     public int getXPosition (){
         return this.x;
     }
@@ -27,4 +28,12 @@ public class Position {
     public int getYPosition (){
         return this.y;
     }
+    
+    
+    
+    @Override
+    public String toString(){
+    	return "(" + this.x + "," + this.y + ")";
+    }
+   
 }

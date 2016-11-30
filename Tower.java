@@ -14,7 +14,8 @@ public class Tower {
     }
     public boolean mosterScout(Position monster){
         if(Math.abs(tower.getXPosition()-monster.getXPosition())== 1 ||
-                Math.abs(tower.getYPosition()-monster.getYPosition())== 1)
+                Math.abs(tower.getYPosition()-monster.getYPosition())== 0 
+                && Math.abs(tower.getXPosition() - monster.getXPosition()) == 1)
             return true;
         else
             return false;

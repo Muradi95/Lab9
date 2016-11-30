@@ -12,13 +12,18 @@ public class Monster {
     public void loseHealth(){
         this.health = health - this.hit;
     }
+    
     public void move(){
 
         currentPosition.moveDown();
         currentPosition.moveForward();
+        currentPosition.moveUp();
     }
     public Position getCurrentPosition(){
         return this.currentPosition;
+    }
+    public int getHealth(){
+    	return this.health;
     }
 
 }

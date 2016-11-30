@@ -9,7 +9,16 @@ public class Test {
 
     public static void main(String[] args) {
         System.out.println("Test Start");
-        // Call test methods here
+        TowerDefenceGame game = new TowerDefenceGame();
+        System.out.println(game.getMonsterPosition().toString());
+        
+        while(game.getMonsterHealth() > 0){
+        	game.nextTurn();
+        	
+        	System.out.println(game.getMonsterHealth());
+        	System.out.println(game.getMonsterPosition().toString());
+        }
+        
         System.out.println("Test Finished");
     }
 
